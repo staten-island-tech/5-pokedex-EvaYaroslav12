@@ -3,7 +3,12 @@ import json
 pokedex = open("./pokedex.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 data = json.load(pokedex)
-print(data[99])
+
+import json
+## Open the JSON file of pokemon data
+typing = open("./types.json", encoding="utf8")
+## create variable "data" that represents the enitre pokedex list
+tipes = json.load(typing)
 
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
 
@@ -15,6 +20,37 @@ print(data[99])
 
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
 
-def funct
-a = [d['name']['english'] for d in data]
-print (a)
+def funct (data2):
+    a = [d['name']['english'] for d in data2]
+    print (a)
+# print(funct(data))
+
+languages = ['english,', 'japanese', 'chinese', 'french']
+def langnum (data2):
+    a = [d['id'] for d in data2]
+    inp = input ('what number pokemon do you want to see? ')
+    lang = input ('what language would you like? [enlgish, japanese, chinese, french] ')
+    imp = int(inp)
+    if (imp) < 809 and (imp) > 0:
+        print (data[a.index(imp)]['name'][lang])
+# print(langnum(data))
+
+def typey (data2):
+    inp = input ('what type would you like to see? ')
+    for d in data2:
+        if inp in d['type']:
+            print(d['name']['english'], d['type'])
+    if inp not in d['type']:
+        print ('type not found')
+        
+# typey(data)
+
+def pokesearch (data2):
+    inp = input ('what pokemon would you like to see? (case sensitive) ')
+    for d in data2:
+        if inp in d['name']['english']:
+            print(d['name']['english'], d['type'])
+    if inp not in d['name']['english']:
+            print ('pokemon not found')
+
+pokesearch(data)

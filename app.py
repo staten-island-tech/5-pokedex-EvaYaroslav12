@@ -10,6 +10,12 @@ typing = open("./types.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 tipes = json.load(typing)
 
+import json
+## Open the JSON file of pokemon data
+Movi = open("./moves.json", encoding="utf8")
+## create variable "data" that represents the enitre pokedex list
+moves = json.load(Movi)
+
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
 
 # Add a language choice feature and print the pokemons name based on the user input
@@ -23,7 +29,7 @@ tipes = json.load(typing)
 def funct (data2):
     a = [d['name']['english'] for d in data2]
     print (a)
-# print(funct(data))
+funct(data)
 
 languages = ['english,', 'japanese', 'chinese', 'french']
 def langnum (data2):
@@ -36,21 +42,38 @@ def langnum (data2):
 # print(langnum(data))
 
 def typey (data2):
+    found = False
     inp = input ('what type would you like to see? ')
     for d in data2:
         if inp in d['type']:
             print(d['name']['english'], d['type'])
-    if inp not in d['type']:
+            found = True
+    if found == False:
         print ('type not found')
         
 # typey(data)
 
 def pokesearch (data2):
+    found = False
     inp = input ('what pokemon would you like to see? (case sensitive) ')
     for d in data2:
         if inp in d['name']['english']:
             print(d['name']['english'], d['type'])
-    if inp not in d['name']['english']:
-            print ('pokemon not found')
+            found = True
+    if found == False:
+        print ('pokemon not found')
 
-pokesearch(data)
+# pokesearch(data)
+
+# def pokemoves (data2):
+#     found = False
+#     inp = input ('what pokemon\'s moves would you like to see? (case sensitive) ')
+#     for d in data2:
+#         if inp in d['name']['english']:
+#             tip = d['type']
+#             found = True
+#             if tip in moves['type']:
+#                 print moves['name']
+#     if found == False:
+#         print ('pokemon not found')
+# # pokemoves(data)

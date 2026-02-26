@@ -29,7 +29,7 @@ moves = json.load(Movi)
 def funct (data2):
     a = [d['name']['english'] for d in data2]
     print (a)
-funct(data)
+# funct(data)
 
 languages = ['english,', 'japanese', 'chinese', 'french']
 def langnum (data2):
@@ -39,7 +39,7 @@ def langnum (data2):
     imp = int(inp)
     if (imp) < 809 and (imp) > 0:
         print (data[a.index(imp)]['name'][lang])
-# print(langnum(data))
+langnum(data)
 
 def typey (data2):
     found = False
@@ -76,4 +76,4 @@ def pokesearch (data2):
 #                 print moves['name']
 #     if found == False:
 #         print ('pokemon not found')
-# # pokemoves(data)
+# pokemoves(data)

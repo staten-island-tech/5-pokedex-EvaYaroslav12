@@ -35,9 +35,9 @@ languages = ['english,', 'japanese', 'chinese', 'french']
 def langnum (data2):
     a = [d['id'] for d in data2]
     inp = input ('what number pokemon do you want to see? ')
-    lang = input ('what language would you like? [enlgish, japanese, chinese, french] ')
     imp = int(inp)
-    if (imp) < 809 and (imp) > 0:
+    if (imp) < 810 and (imp) > 0:
+        lang = input ('what language would you like? [enlgish, japanese, chinese, french] ')
         print (data[a.index(imp)]['name'][lang])
 langnum(data)
 

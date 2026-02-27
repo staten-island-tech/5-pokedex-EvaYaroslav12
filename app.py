@@ -74,8 +74,9 @@ def pokemoves (data2, moves2):
             found = True
             print('found')
             print(tipe)
-            if tipe in moves['type']:
-                print(moves2)
+            for move in moves2:
+                if move['type'] in tipe:
+                    print(move['ename'])
     if found == False:
         print ('pokemon not found')
-pokemoves(data, moves)
+# pokemoves(data, moves)

@@ -39,7 +39,7 @@ def langnum (data2):
     if (imp) < 810 and (imp) > 0:
         lang = input ('what language would you like? [enlgish, japanese, chinese, french] ')
         print (data[a.index(imp)]['name'][lang])
-langnum(data)
+# langnum(data)
 
 def typey (data2):
     found = False
@@ -65,15 +65,17 @@ def pokesearch (data2):
 
 # pokesearch(data)
 
-# def pokemoves (data2):
-#     found = False
-#     inp = input ('what pokemon\'s moves would you like to see? (case sensitive) ')
-#     for d in data2:
-#         if inp in d['name']['english']:
-#             tip = d['type']
-#             found = True
-#             if tip in moves['type']:
-#                 print moves['name']
-#     if found == False:
-#         print ('pokemon not found')
-# pokemoves(data)
+def pokemoves (data2, moves2):
+    found = False
+    inp = input ('what pokemon\'s moves would you like to see? (case sensitive) ')
+    for d in data2:
+        if inp in d['name']['english']:
+            tipe = list(d['type'])
+            found = True
+            print('found')
+            print(tipe)
+            if tipe in moves['type']:
+                print(moves2)
+    if found == False:
+        print ('pokemon not found')
+pokemoves(data, moves)

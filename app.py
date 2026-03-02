@@ -79,4 +79,4 @@ def pokemoves (data2, moves2):
                     print(move['ename'])
     if found == False:
         print ('pokemon not found')
-# pokemoves(data, moves)
+pokemoves(data, moves)

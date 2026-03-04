@@ -73,6 +73,7 @@ def pokemoves (data2, moves2):
             tipe = list(d['type'])
             found = True
             print('found')
+            print('*[',d['name']['english'],']*')
             print(tipe)
             for move in moves2:
                 if move['type'] in tipe:

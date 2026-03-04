@@ -51,7 +51,7 @@ def typey (data2):
     if found == False:
         print ('type not found')
         
-# typey(data)
+typey(data)
 
 def pokesearch (data2):
     found = False

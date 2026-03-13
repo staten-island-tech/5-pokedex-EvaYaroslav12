@@ -51,7 +51,7 @@ def typey (data2):
     if found == False:
         print ('type not found')
         
-# typey(data)
+typey(data)
 
 def pokesearch (data2):
     found = False
@@ -73,6 +73,7 @@ def pokemoves (data2, moves2):
             tipe = list(d['type'])
             found = True
             print('found')
+            print('*[',d['name']['english'],']*')
             print(tipe)
             for move in moves2:
                 if move['type'] in tipe:
